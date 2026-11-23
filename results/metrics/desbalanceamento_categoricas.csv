@@ -1,0 +1,11 @@
+atributo,papel,quantidade_classes,classe_majoritaria,freq_majoritaria,pct_majoritaria,classe_minoritaria,freq_minoritaria,pct_minoritaria,razao_desbalanceamento_IR,entropia_normalizada
+PAY_5,Preditor,10,0,16947,56.49,8,1,0.0033,16947.0,0.5205
+PAY_2,Preditor,11,0,15730,52.43,8,1,0.0033,15730.0,0.5327
+PAY_4,Preditor,11,0,16455,54.85,1,2,0.0067,8227.5,0.5125
+PAY_6,Preditor,10,0,16286,54.29,8,2,0.0067,8143.0,0.5316
+PAY_3,Preditor,11,0,15764,52.55,8,3,0.01,5254.67,0.5277
+PAY_0,Preditor,11,0,14737,49.12,7,9,0.03,1637.44,0.5991
+EDUCATION,Preditor,7,2,14030,46.77,0,14,0.0467,1002.14,0.5653
+MARRIAGE,Preditor,4,2,15964,53.21,0,54,0.18,295.63,0.544
+default payment next month,Alvo (Target),2,0,23364,77.88,1,6636,22.12,3.52,0.7624
+SEX,Preditor,2,2,18112,60.37,1,11888,39.6267,1.52,0.9687

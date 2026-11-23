@@ -1,0 +1,9 @@
+variacao,algoritmo,total_amostras,verdadeiros_negativos_TN,falsos_positivos_FP,falsos_negativos_FN,verdadeiros_positivos_TP,taxa_acuracia_oof,sensibilidade_recall_c1,especificidade_c0,precisao_c1,f1_c1,roc_auc_oof,average_precision_oof
+variacao_a,dummy,30000,23364,0,6636,0,0.7788,0.0,1.0,0.0,0.0,0.5,0.2212
+variacao_a,decision_tree,30000,19006,4358,3913,2723,0.7243,0.41034,0.81347,0.38455,0.39703,0.61192,0.28835
+variacao_a,random_forest,30000,22046,1318,4158,2478,0.81747,0.37342,0.94359,0.65279,0.47508,0.76353,0.53509
+variacao_a,knn,30000,21416,1948,4304,2332,0.7916,0.35142,0.91662,0.54486,0.42726,0.70249,0.41345
+variacao_b,dummy,30000,23364,0,6636,0,0.7788,0.0,1.0,0.0,0.0,0.5,0.2212
+variacao_b,decision_tree,30000,18955,4409,3952,2684,0.7213,0.40446,0.81129,0.3784,0.391,0.60792,0.28489
+variacao_b,random_forest,30000,22043,1321,4208,2428,0.8157,0.36588,0.94346,0.64764,0.4676,0.76317,0.53508
+variacao_b,knn,30000,21418,1946,4304,2332,0.79167,0.35142,0.91671,0.54511,0.42734,0.7027,0.4135

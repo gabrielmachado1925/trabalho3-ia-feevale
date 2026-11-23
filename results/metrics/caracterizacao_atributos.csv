@@ -1,0 +1,26 @@
+atributo,papel,tipo_armazenamento,tipo_semantico,unidade,valores_distintos,valores_ausentes,pct_ausentes,valor_minimo,valor_maximo,descricao
+ID,Identificador,int64,Identificador Único,Adimensional,30000,0,0.0,1.0,30000.0,Identificador único sequencial de cada cliente (1 a 30.000). Não deve ser usado como preditor.
+LIMIT_BAL,Preditor,int64,Numérico Contínuo,Novo Dólar Taiwanês (NT$),81,0,0.0,10000.0,1000000.0,"Montante do crédito concedido, incluindo crédito individual e familiar suplementar."
+SEX,Preditor,int64,Categórico Nominal Binário,"Categorias (1=Masculino, 2=Feminino)",2,0,0.0,1.0,2.0,Gênero do titular do cartão de crédito.
+EDUCATION,Preditor,int64,Categórico Ordinal / Nominal,"Categorias (1=Pós-graduação, 2=Universidade, 3=Ensino Médio, 4=Outros)",7,0,0.0,0.0,6.0,"Grau de escolaridade formal. Valores não documentados: 0, 5 e 6."
+MARRIAGE,Preditor,int64,Categórico Nominal,"Categorias (1=Casado, 2=Solteiro, 3=Outros)",4,0,0.0,0.0,3.0,Estado civil do cliente. Valor não documentado: 0.
+AGE,Preditor,int64,Numérico Discreto,Anos,56,0,0.0,21.0,79.0,Idade cronológica em anos completos.
+PAY_0,Preditor,int64,Categórico Ordinal,Escala de atraso em meses,11,0,0.0,-2.0,8.0,Status de amortização em setembro/2005 (-1=pontual; 1 a 8=meses de atraso). Códigos -2 e 0 não documentados.
+PAY_2,Preditor,int64,Categórico Ordinal,Escala de atraso em meses,11,0,0.0,-2.0,8.0,Status de amortização em agosto/2005.
+PAY_3,Preditor,int64,Categórico Ordinal,Escala de atraso em meses,11,0,0.0,-2.0,8.0,Status de amortização em julho/2005.
+PAY_4,Preditor,int64,Categórico Ordinal,Escala de atraso em meses,11,0,0.0,-2.0,8.0,Status de amortização em junho/2005.
+PAY_5,Preditor,int64,Categórico Ordinal,Escala de atraso em meses,10,0,0.0,-2.0,8.0,Status de amortização em maio/2005.
+PAY_6,Preditor,int64,Categórico Ordinal,Escala de atraso em meses,10,0,0.0,-2.0,8.0,Status de amortização em abril/2005.
+BILL_AMT1,Preditor,int64,Numérico Contínuo,Novo Dólar Taiwanês (NT$),22723,0,0.0,-165580.0,964511.0,Valor da fatura em setembro de 2005.
+BILL_AMT2,Preditor,int64,Numérico Contínuo,Novo Dólar Taiwanês (NT$),22346,0,0.0,-69777.0,983931.0,Valor da fatura em agosto de 2005.
+BILL_AMT3,Preditor,int64,Numérico Contínuo,Novo Dólar Taiwanês (NT$),22026,0,0.0,-157264.0,1664089.0,Valor da fatura em julho de 2005.
+BILL_AMT4,Preditor,int64,Numérico Contínuo,Novo Dólar Taiwanês (NT$),21548,0,0.0,-170000.0,891586.0,Valor da fatura em junho de 2005.
+BILL_AMT5,Preditor,int64,Numérico Contínuo,Novo Dólar Taiwanês (NT$),21010,0,0.0,-81334.0,927171.0,Valor da fatura em maio de 2005.
+BILL_AMT6,Preditor,int64,Numérico Contínuo,Novo Dólar Taiwanês (NT$),20604,0,0.0,-339603.0,961664.0,Valor da fatura em abril de 2005.
+PAY_AMT1,Preditor,int64,Numérico Contínuo,Novo Dólar Taiwanês (NT$),7943,0,0.0,0.0,873552.0,Valor pago em setembro de 2005 referente à fatura anterior.
+PAY_AMT2,Preditor,int64,Numérico Contínuo,Novo Dólar Taiwanês (NT$),7899,0,0.0,0.0,1684259.0,Valor pago em agosto de 2005 referente à fatura anterior.
+PAY_AMT3,Preditor,int64,Numérico Contínuo,Novo Dólar Taiwanês (NT$),7518,0,0.0,0.0,896040.0,Valor pago em julho de 2005 referente à fatura anterior.
+PAY_AMT4,Preditor,int64,Numérico Contínuo,Novo Dólar Taiwanês (NT$),6937,0,0.0,0.0,621000.0,Valor pago em junho de 2005 referente à fatura anterior.
+PAY_AMT5,Preditor,int64,Numérico Contínuo,Novo Dólar Taiwanês (NT$),6897,0,0.0,0.0,426529.0,Valor pago em maio de 2005 referente à fatura anterior.
+PAY_AMT6,Preditor,int64,Numérico Contínuo,Novo Dólar Taiwanês (NT$),6939,0,0.0,0.0,528666.0,Valor pago em abril de 2005 referente à fatura anterior.
+default payment next month,Alvo (Target),int64,Categórico Binário,"0=Não Inadimplente, 1=Inadimplente",2,0,0.0,0.0,1.0,Indicador se o cliente entrou em inadimplência no mês subsequente (outubro/2005).

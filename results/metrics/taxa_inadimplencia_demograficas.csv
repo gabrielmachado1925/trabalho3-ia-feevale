@@ -1,0 +1,14 @@
+atributo,codigo,rotulo,total_clientes,inadimplentes,taxa_inadimplencia_pct
+SEX,1,Masculino,11888,2873,24.17
+SEX,2,Feminino,18112,3763,20.78
+EDUCATION,0,0 - Não Documentado,14,0,0.0
+EDUCATION,1,1 - Pós-Graduação,10585,2036,19.23
+EDUCATION,2,2 - Universidade,14030,3330,23.73
+EDUCATION,3,3 - Ensino Médio,4917,1237,25.16
+EDUCATION,4,4 - Outros,123,7,5.69
+EDUCATION,5,5 - Não Documentado,280,18,6.43
+EDUCATION,6,6 - Não Documentado,51,8,15.69
+MARRIAGE,0,0 - Não Documentado,54,5,9.26
+MARRIAGE,1,1 - Casado,13659,3206,23.47
+MARRIAGE,2,2 - Solteiro,15964,3341,20.93
+MARRIAGE,3,3 - Outros,323,84,26.01

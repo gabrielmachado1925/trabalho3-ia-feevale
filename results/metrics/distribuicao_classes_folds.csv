@@ -1,0 +1,6 @@
+fold,total_treino,classe_0_treino_qtd,classe_0_treino_pct,classe_1_treino_qtd,classe_1_treino_pct,total_validacao,classe_0_val_qtd,classe_0_val_pct,classe_1_val_qtd,classe_1_val_pct,sobreposicao_grupos_treino_val
+1,24004,18722,78.0,5282,22.0,5996,4642,77.42,1354,22.58,0
+2,23995,18678,77.84,5317,22.16,6005,4686,78.03,1319,21.97,0
+3,24003,18690,77.87,5313,22.13,5997,4674,77.94,1323,22.06,0
+4,23995,18673,77.82,5322,22.18,6005,4691,78.12,1314,21.88,0
+5,24003,18693,77.88,5310,22.12,5997,4671,77.89,1326,22.11,0

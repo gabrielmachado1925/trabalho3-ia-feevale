@@ -1,0 +1,10 @@
+aspecto,base_bruta,variacao_a,variacao_b,observacao
+Total de Instâncias,30000,30000,30000,Volume total de 30.000 clientes rigorosamente preservado em ambas as variações
+Total de Colunas Exportadas,25,26,26,25 colunas originais + 1 coluna auxiliar feature_group_id para agrupamento de folds
+Atributo ID na Base,Presente (1..30000),Preservado para rastreabilidade,Preservado para rastreabilidade,Estritamente excluído dos preditores no momento do treinamento
+Categorias de EDUCATION,"[0, 1, 2, 3, 4, 5, 6]","[np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6)]","[np.int64(1), np.int64(2), np.int64(3), np.int64(4)]","Variação B consolidou 0 (14), 5 (280) e 6 (51) em 4 (total 4=468)"
+Categorias de MARRIAGE,"[0, 1, 2, 3]","[np.int64(0), np.int64(1), np.int64(2), np.int64(3)]","[np.int64(1), np.int64(2), np.int64(3)]",Variação B consolidou código 0 (54) em 3 (total 3=377)
+Target - Classe 0 (Adimplente),23364 (77.88%),23364 (77.88%),23364 (77.88%),Distribuição original da classe majoritária 100% inalterada
+Target - Classe 1 (Inadimplente),6636 (22.12%),6636 (22.12%),6636 (22.12%),Distribuição original da classe minoritária 100% inalterada
+Valores Ausentes (NaN/Nulos),0,0,0,Nenhum valor nulo introduzido pelo processo
+Escalonamento Global nos Arquivos,Não aplicável,Não realizado (Prevenção de Leakage),Não realizado (Prevenção de Leakage),StandardScaler deve ser ajustado estritamente no fold de treino em cada iteração de validação

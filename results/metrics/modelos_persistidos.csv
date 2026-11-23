@@ -1,0 +1,9 @@
+algoritmo,variacao,arquivo,tamanho_bytes,tamanho_mb,tempo_treinamento_full_s
+dummy,variacao_a,dummy_variacao_a.joblib,679,0.001,0.001
+decision_tree,variacao_a,decision_tree_variacao_a.joblib,127745,0.122,0.527
+random_forest,variacao_a,random_forest_variacao_a.joblib,12845413,12.25,5.419
+knn,variacao_a,knn_variacao_a.joblib,2684264,2.56,0.022
+dummy,variacao_b,dummy_variacao_b.joblib,679,0.001,0.001
+decision_tree,variacao_b,decision_tree_variacao_b.joblib,127489,0.122,0.498
+random_forest,variacao_b,random_forest_variacao_b.joblib,12466552,11.889,5.699
+knn,variacao_b,knn_variacao_b.joblib,2635956,2.514,0.011

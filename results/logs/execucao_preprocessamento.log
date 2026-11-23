@@ -1,0 +1,193 @@
+2026-11-19 20:08:40,775 [INFO] === INÍCIO DO PRÉ-PROCESSAMENTO (FASE 2) ===
+2026-11-19 20:08:40,775 [INFO] Carregando dados brutos de: ./data/raw/default of credit card clients.xls
+2026-11-19 20:08:41,747 [INFO] Dados brutos carregados: 30000 registros e 25 colunas.
+2026-11-19 20:08:41,786 [INFO] Identificação de grupos de preditores concluída:
+2026-11-19 20:08:41,786 [INFO]  - Total de registros: 30000
+2026-11-19 20:08:41,786 [INFO]  - Total de perfis preditivos distintos: 29944
+2026-11-19 20:08:41,788 [INFO]  - Quantidade de perfis com mais de um cliente: 52
+2026-11-19 20:08:41,788 [INFO] Construindo Variação A (Base de Referência com códigos originais)...
+2026-11-19 20:08:41,915 [INFO] Variação A salva com sucesso em: ./data/processed/dataset_variacao_a.csv
+2026-11-19 20:08:41,915 [INFO] Construindo Variação B (Consolidação de Categorias Não Documentadas)...
+2026-11-19 20:08:41,919 [INFO] Transformação EDUCATION: Antes={0: 14, 1: 10585, 2: 14030, 3: 4917, 4: 123, 5: 280, 6: 51} -> Depois={1: 10585, 2: 14030, 3: 4917, 4: 468}
+2026-11-19 20:08:41,919 [INFO] Transformação MARRIAGE: Antes={0: 54, 1: 13659, 2: 15964, 3: 323} -> Depois={1: 13659, 2: 15964, 3: 377}
+2026-11-19 20:08:42,084 [INFO] Variação B salva com sucesso em: ./data/processed/dataset_variacao_b.csv
+2026-11-19 20:08:42,084 [INFO] Gerando resumo comparativo de pré-processamento...
+2026-11-19 20:08:42,085 [INFO] Tabela de resumo salva em: ./results/metrics/resumo_preprocessamento.csv
+2026-11-19 20:08:42,085 [INFO] === PRÉ-PROCESSAMENTO CONCLUÍDO EM 1.31 SEGUNDOS ===
+2026-11-19 20:09:21,172 [INFO] === INÍCIO DA PREPARAÇÃO DE VALIDAÇÃO CRUZADA (FASE 2) ===
+2026-11-19 20:09:21,172 [INFO] Carregando dados para partição de folds: ./data/processed/dataset_variacao_a.csv
+2026-11-19 20:09:21,222 [INFO] Executando StratifiedGroupKFold (n_splits=5, shuffle=True, random_state=42)...
+2026-11-19 20:09:24,252 [INFO] Fold 1: Treino=24004 (C0=78.00%, C1=22.00%), Val=5996 (C0=77.42%, C1=22.58%), Sobreposição de Grupos=0
+2026-11-19 20:09:24,259 [INFO] Fold 2: Treino=23995 (C0=77.84%, C1=22.16%), Val=6005 (C0=78.03%, C1=21.97%), Sobreposição de Grupos=0
+2026-11-19 20:09:24,265 [INFO] Fold 3: Treino=24003 (C0=77.87%, C1=22.13%), Val=5997 (C0=77.94%, C1=22.06%), Sobreposição de Grupos=0
+2026-11-19 20:09:24,270 [INFO] Fold 4: Treino=23995 (C0=77.82%, C1=22.18%), Val=6005 (C0=78.12%, C1=21.88%), Sobreposição de Grupos=0
+2026-11-19 20:09:24,275 [INFO] Fold 5: Treino=24003 (C0=77.88%, C1=22.12%), Val=5997 (C0=77.89%, C1=22.11%), Sobreposição de Grupos=0
+2026-11-19 20:09:24,300 [INFO] Mapeamento de folds persistido em: ./results/metrics/validacao_folds.csv
+2026-11-19 20:09:24,301 [INFO] Distribuição de classes por fold salva em: ./results/metrics/distribuicao_classes_folds.csv
+2026-11-19 20:09:24,301 [INFO] === PREPARAÇÃO DE VALIDAÇÃO CONCLUÍDA EM 3.13 SEGUNDOS ===
+2026-11-19 20:10:07,782 [INFO] ========================================================
+2026-11-19 20:10:07,782 [INFO] INICIANDO SUÍTE DE VALIDAÇÕES AUTOMATIZADAS DA FASE 2
+2026-11-19 20:10:07,782 [INFO] ========================================================
+2026-11-19 20:10:07,782 [INFO] Teste 1: Verificando integridade SHA-256 dos arquivos brutos...
+2026-11-19 20:10:07,798 [INFO] -> Teste 1 APROVADO: Todos os arquivos brutos estão intactos.
+2026-11-19 20:10:07,798 [INFO] Teste 2: Verificando dimensões e integridade de classes nas variações A e B...
+2026-11-19 20:10:07,884 [INFO] -> Teste 2 APROVADO: 30.000 registros e distribuição 23.364/6.636 rigorosamente preservados.
+2026-11-19 20:10:07,884 [INFO] Teste 3: Verificando aplicação estrita das regras de categorias...
+2026-11-19 20:10:07,933 [INFO] -> Teste 3 APROVADO: Regras de consolidação e preservação executadas com precisão.
+2026-11-19 20:10:07,933 [INFO] Teste 4: Verificando isolamento de grupos e integridade dos 5 folds...
+2026-11-19 20:10:07,950 [INFO] -> Teste 4 APROVADO: 0 vazamento de perfis idênticos entre treino e validação em todos os 5 folds.
+2026-11-19 20:10:07,951 [INFO] Teste 5: Ensaio de viabilidade de execução dos algoritmos (dry-run no Fold 1)...
+2026-11-19 20:10:07,983 [INFO]  - Algoritmo 'dummy': execução técnica concluída com sucesso (acurácia teste fold 1: 0.7742)
+2026-11-19 20:10:08,394 [INFO]  - Algoritmo 'decision_tree': execução técnica concluída com sucesso (acurácia teste fold 1: 0.7297)
+2026-11-19 20:10:12,829 [INFO]  - Algoritmo 'random_forest': execução técnica concluída com sucesso (acurácia teste fold 1: 0.8144)
+2026-11-19 20:10:13,016 [INFO]  - Algoritmo 'knn': execução técnica concluída com sucesso (acurácia teste fold 1: 0.7874)
+2026-11-19 20:10:13,016 [INFO] -> Teste 5 APROVADO: Pipelines e algoritmos 100% compatíveis e prontos para a Fase 3.
+2026-11-19 20:10:13,016 [INFO] ========================================================
+2026-11-19 20:10:13,016 [INFO] TODAS AS VALIDAÇÕES FORAM APROVADAS COM SUCESSO EM 5.23s
+2026-11-19 20:10:13,016 [INFO] ========================================================
+2026-11-19 20:16:17,480 [INFO] ========================================================
+2026-11-19 20:16:17,481 [INFO] INICIANDO SUÍTE DE VALIDAÇÕES AUTOMATIZADAS DA FASE 2
+2026-11-19 20:16:17,481 [INFO] ========================================================
+2026-11-19 20:16:17,481 [INFO] Teste 1: Verificando integridade SHA-256 dos arquivos brutos...
+2026-11-19 20:16:17,501 [INFO] -> Teste 1 APROVADO: Todos os arquivos brutos estão intactos.
+2026-11-19 20:16:17,501 [INFO] Teste 2: Verificando dimensões e integridade de classes nas variações A e B...
+2026-11-19 20:16:17,583 [INFO] -> Teste 2 APROVADO: 30.000 registros e distribuição 23.364/6.636 rigorosamente preservados.
+2026-11-19 20:16:17,583 [INFO] Teste 3: Verificando aplicação estrita das regras de categorias...
+2026-11-19 20:16:17,633 [INFO] -> Teste 3 APROVADO: Regras de consolidação e preservação executadas com precisão.
+2026-11-19 20:16:17,633 [INFO] Teste 4: Verificando isolamento de grupos e integridade dos 5 folds...
+2026-11-19 20:16:17,651 [INFO] -> Teste 4 APROVADO: 0 vazamento de perfis idênticos entre treino e validação em todos os 5 folds.
+2026-11-19 20:16:17,651 [INFO] Teste 5: Ensaio de viabilidade de execução dos algoritmos (dry-run no Fold 1)...
+2026-11-19 20:16:17,684 [INFO]  - Algoritmo 'dummy': execução técnica concluída com sucesso (acurácia teste fold 1: 0.7742)
+2026-11-19 20:16:18,235 [INFO]  - Algoritmo 'decision_tree': execução técnica concluída com sucesso (acurácia teste fold 1: 0.7297)
+2026-11-19 20:16:22,723 [INFO]  - Algoritmo 'random_forest': execução técnica concluída com sucesso (acurácia teste fold 1: 0.8144)
+2026-11-19 20:16:22,904 [INFO]  - Algoritmo 'knn': execução técnica concluída com sucesso (acurácia teste fold 1: 0.7874)
+2026-11-19 20:16:22,904 [INFO] -> Teste 5 APROVADO: Pipelines e algoritmos 100% compatíveis e prontos para a Fase 3.
+2026-11-19 20:16:22,905 [INFO] ========================================================
+2026-11-19 20:16:22,905 [INFO] TODAS AS VALIDAÇÕES FORAM APROVADAS COM SUCESSO EM 5.42s
+2026-11-19 20:16:22,905 [INFO] ========================================================
+2026-11-19 20:25:12,859 [INFO] ========================================================
+2026-11-19 20:25:12,860 [INFO] INICIANDO SUÍTE DE VALIDAÇÕES AUTOMATIZADAS DA FASE 2
+2026-11-19 20:25:12,860 [INFO] ========================================================
+2026-11-19 20:25:12,860 [INFO] Teste 1: Verificando integridade SHA-256 dos arquivos brutos...
+2026-11-19 20:25:12,879 [INFO] -> Teste 1 APROVADO: Todos os arquivos brutos estão intactos.
+2026-11-19 20:25:12,879 [INFO] Teste 2: Verificando dimensões e integridade de classes nas variações A e B...
+2026-11-19 20:25:12,976 [INFO] -> Teste 2 APROVADO: 30.000 registros e distribuição 23.364/6.636 rigorosamente preservados.
+2026-11-19 20:25:12,976 [INFO] Teste 3: Verificando aplicação estrita das regras de categorias...
+2026-11-19 20:25:13,032 [INFO] -> Teste 3 APROVADO: Regras de consolidação e preservação executadas com precisão.
+2026-11-19 20:25:13,032 [INFO] Teste 4: Verificando isolamento de grupos e integridade dos 5 folds...
+2026-11-19 20:25:13,050 [INFO] -> Teste 4 APROVADO: 0 vazamento de perfis idênticos entre treino e validação em todos os 5 folds.
+2026-11-19 20:25:13,051 [INFO] Teste 5: Ensaio de viabilidade de execução dos algoritmos (dry-run no Fold 1)...
+2026-11-19 20:25:13,085 [INFO]  - Algoritmo 'dummy': execução técnica concluída com sucesso (acurácia teste fold 1: 0.7742)
+2026-11-19 20:25:13,506 [INFO]  - Algoritmo 'decision_tree': execução técnica concluída com sucesso (acurácia teste fold 1: 0.7297)
+2026-11-19 20:25:18,178 [INFO]  - Algoritmo 'random_forest': execução técnica concluída com sucesso (acurácia teste fold 1: 0.8144)
+2026-11-19 20:25:18,371 [INFO]  - Algoritmo 'knn': execução técnica concluída com sucesso (acurácia teste fold 1: 0.7874)
+2026-11-19 20:25:18,371 [INFO] -> Teste 5 APROVADO: Pipelines e algoritmos 100% compatíveis e prontos para a Fase 3.
+2026-11-19 20:25:18,371 [INFO] ========================================================
+2026-11-19 20:25:18,371 [INFO] TODAS AS VALIDAÇÕES FORAM APROVADAS COM SUCESSO EM 5.51s
+2026-11-19 20:25:18,372 [INFO] ========================================================
+2026-11-19 20:26:05,887 [INFO] ================================================================================
+2026-11-19 20:26:05,887 [INFO] INÍCIO DA EXECUÇÃO EXPERIMENTAL (FASE 3) - 40 RODADAS CONTROLADAS
+2026-11-19 20:26:05,887 [INFO] Ambiente: Apple M2 (8 núcleos: 4 de desempenho, 4 de eficiência) | Python: 3.9.6
+2026-11-19 20:26:05,888 [INFO] ================================================================================
+2026-11-19 20:26:05,990 [INFO] 
+--- Iniciando Algoritmo: DUMMY na VARIACAO_A (5 Folds) ---
+2026-11-19 20:26:06,009 [INFO] [01/40] VARIACAO_A | DUMMY | Fold 1 -> Acc: 0.7742 | F1-Macro: 0.4364 | Rec-C1: 0.0000 | F1-C1: 0.0000 | T_Train: 0.002s | T_Pred: 0.000s
+2026-11-19 20:26:06,020 [INFO] [02/40] VARIACAO_A | DUMMY | Fold 2 -> Acc: 0.7803 | F1-Macro: 0.4383 | Rec-C1: 0.0000 | F1-C1: 0.0000 | T_Train: 0.001s | T_Pred: 0.000s
+2026-11-19 20:26:06,031 [INFO] [03/40] VARIACAO_A | DUMMY | Fold 3 -> Acc: 0.7794 | F1-Macro: 0.4380 | Rec-C1: 0.0000 | F1-C1: 0.0000 | T_Train: 0.001s | T_Pred: 0.000s
+2026-11-19 20:26:06,042 [INFO] [04/40] VARIACAO_A | DUMMY | Fold 4 -> Acc: 0.7812 | F1-Macro: 0.4386 | Rec-C1: 0.0000 | F1-C1: 0.0000 | T_Train: 0.001s | T_Pred: 0.000s
+2026-11-19 20:26:06,053 [INFO] [05/40] VARIACAO_A | DUMMY | Fold 5 -> Acc: 0.7789 | F1-Macro: 0.4379 | Rec-C1: 0.0000 | F1-C1: 0.0000 | T_Train: 0.001s | T_Pred: 0.000s
+2026-11-19 20:26:06,446 [INFO] 
+--- Iniciando Algoritmo: DECISION_TREE na VARIACAO_A (5 Folds) ---
+2026-11-19 20:26:06,886 [INFO] [06/40] VARIACAO_A | DECISION_TREE | Fold 1 -> Acc: 0.7320 | F1-Macro: 0.6180 | Rec-C1: 0.4114 | F1-C1: 0.4094 | T_Train: 0.422s | T_Pred: 0.004s
+2026-11-19 20:26:07,311 [INFO] [07/40] VARIACAO_A | DECISION_TREE | Fold 2 -> Acc: 0.7237 | F1-Macro: 0.6099 | Rec-C1: 0.4177 | F1-C1: 0.3991 | T_Train: 0.409s | T_Pred: 0.003s
+2026-11-19 20:26:07,713 [INFO] [08/40] VARIACAO_A | DECISION_TREE | Fold 3 -> Acc: 0.7215 | F1-Macro: 0.6115 | Rec-C1: 0.4293 | F1-C1: 0.4048 | T_Train: 0.386s | T_Pred: 0.003s
+2026-11-19 20:26:08,127 [INFO] [09/40] VARIACAO_A | DECISION_TREE | Fold 4 -> Acc: 0.7204 | F1-Macro: 0.6003 | Rec-C1: 0.3935 | F1-C1: 0.3811 | T_Train: 0.398s | T_Pred: 0.003s
+2026-11-19 20:26:08,690 [INFO] [10/40] VARIACAO_A | DECISION_TREE | Fold 5 -> Acc: 0.7239 | F1-Macro: 0.6059 | Rec-C1: 0.3997 | F1-C1: 0.3903 | T_Train: 0.547s | T_Pred: 0.004s
+2026-11-19 20:26:09,080 [INFO] 
+--- Iniciando Algoritmo: RANDOM_FOREST na VARIACAO_A (5 Folds) ---
+2026-11-19 20:26:13,254 [INFO] [11/40] VARIACAO_A | RANDOM_FOREST | Fold 1 -> Acc: 0.8142 | F1-Macro: 0.6799 | Rec-C1: 0.3685 | F1-C1: 0.4725 | T_Train: 4.017s | T_Pred: 0.074s
+2026-11-19 20:26:17,423 [INFO] [12/40] VARIACAO_A | RANDOM_FOREST | Fold 2 -> Acc: 0.8175 | F1-Macro: 0.6811 | Rec-C1: 0.3723 | F1-C1: 0.4726 | T_Train: 4.012s | T_Pred: 0.073s
+2026-11-19 20:26:21,532 [INFO] [13/40] VARIACAO_A | RANDOM_FOREST | Fold 3 -> Acc: 0.8222 | F1-Macro: 0.6935 | Rec-C1: 0.3946 | F1-C1: 0.4948 | T_Train: 3.931s | T_Pred: 0.082s
+2026-11-19 20:26:26,170 [INFO] [14/40] VARIACAO_A | RANDOM_FOREST | Fold 4 -> Acc: 0.8140 | F1-Macro: 0.6739 | Rec-C1: 0.3623 | F1-C1: 0.4601 | T_Train: 4.464s | T_Pred: 0.080s
+2026-11-19 20:26:30,477 [INFO] [15/40] VARIACAO_A | RANDOM_FOREST | Fold 5 -> Acc: 0.8194 | F1-Macro: 0.6830 | Rec-C1: 0.3695 | F1-C1: 0.4750 | T_Train: 4.141s | T_Pred: 0.075s
+2026-11-19 20:26:30,866 [INFO] 
+--- Iniciando Algoritmo: KNN na VARIACAO_A (5 Folds) ---
+2026-11-19 20:26:31,402 [INFO] [16/40] VARIACAO_A | KNN | Fold 1 -> Acc: 0.7874 | F1-Macro: 0.6467 | Rec-C1: 0.3464 | F1-C1: 0.4239 | T_Train: 0.008s | T_Pred: 0.186s
+2026-11-19 20:26:31,689 [INFO] [17/40] VARIACAO_A | KNN | Fold 2 -> Acc: 0.7900 | F1-Macro: 0.6473 | Rec-C1: 0.3503 | F1-C1: 0.4229 | T_Train: 0.009s | T_Pred: 0.149s
+2026-11-19 20:26:31,943 [INFO] [18/40] VARIACAO_A | KNN | Fold 3 -> Acc: 0.7964 | F1-Macro: 0.6608 | Rec-C1: 0.3719 | F1-C1: 0.4463 | T_Train: 0.007s | T_Pred: 0.119s
+2026-11-19 20:26:32,204 [INFO] [19/40] VARIACAO_A | KNN | Fold 4 -> Acc: 0.7887 | F1-Macro: 0.6433 | Rec-C1: 0.3432 | F1-C1: 0.4155 | T_Train: 0.007s | T_Pred: 0.122s
+2026-11-19 20:26:32,462 [INFO] [20/40] VARIACAO_A | KNN | Fold 5 -> Acc: 0.7956 | F1-Macro: 0.6516 | Rec-C1: 0.3454 | F1-C1: 0.4276 | T_Train: 0.007s | T_Pred: 0.119s
+2026-11-19 20:26:32,884 [INFO] 
+--- Iniciando Algoritmo: DUMMY na VARIACAO_B (5 Folds) ---
+2026-11-19 20:26:32,895 [INFO] [21/40] VARIACAO_B | DUMMY | Fold 1 -> Acc: 0.7742 | F1-Macro: 0.4364 | Rec-C1: 0.0000 | F1-C1: 0.0000 | T_Train: 0.001s | T_Pred: 0.000s
+2026-11-19 20:26:32,904 [INFO] [22/40] VARIACAO_B | DUMMY | Fold 2 -> Acc: 0.7803 | F1-Macro: 0.4383 | Rec-C1: 0.0000 | F1-C1: 0.0000 | T_Train: 0.001s | T_Pred: 0.000s
+2026-11-19 20:26:32,913 [INFO] [23/40] VARIACAO_B | DUMMY | Fold 3 -> Acc: 0.7794 | F1-Macro: 0.4380 | Rec-C1: 0.0000 | F1-C1: 0.0000 | T_Train: 0.001s | T_Pred: 0.000s
+2026-11-19 20:26:32,922 [INFO] [24/40] VARIACAO_B | DUMMY | Fold 4 -> Acc: 0.7812 | F1-Macro: 0.4386 | Rec-C1: 0.0000 | F1-C1: 0.0000 | T_Train: 0.001s | T_Pred: 0.000s
+2026-11-19 20:26:32,931 [INFO] [25/40] VARIACAO_B | DUMMY | Fold 5 -> Acc: 0.7789 | F1-Macro: 0.4379 | Rec-C1: 0.0000 | F1-C1: 0.0000 | T_Train: 0.001s | T_Pred: 0.000s
+2026-11-19 20:26:33,318 [INFO] 
+--- Iniciando Algoritmo: DECISION_TREE na VARIACAO_B (5 Folds) ---
+2026-11-19 20:26:33,761 [INFO] [26/40] VARIACAO_B | DECISION_TREE | Fold 1 -> Acc: 0.7297 | F1-Macro: 0.6137 | Rec-C1: 0.4025 | F1-C1: 0.4021 | T_Train: 0.426s | T_Pred: 0.003s
+2026-11-19 20:26:34,212 [INFO] [27/40] VARIACAO_B | DECISION_TREE | Fold 2 -> Acc: 0.7216 | F1-Macro: 0.6071 | Rec-C1: 0.4139 | F1-C1: 0.3951 | T_Train: 0.433s | T_Pred: 0.003s
+2026-11-19 20:26:34,617 [INFO] [28/40] VARIACAO_B | DECISION_TREE | Fold 3 -> Acc: 0.7170 | F1-Macro: 0.6034 | Rec-C1: 0.4119 | F1-C1: 0.3911 | T_Train: 0.388s | T_Pred: 0.003s
+2026-11-19 20:26:35,049 [INFO] [29/40] VARIACAO_B | DECISION_TREE | Fold 4 -> Acc: 0.7182 | F1-Macro: 0.5973 | Rec-C1: 0.3889 | F1-C1: 0.3766 | T_Train: 0.416s | T_Pred: 0.003s
+2026-11-19 20:26:35,473 [INFO] [30/40] VARIACAO_B | DECISION_TREE | Fold 5 -> Acc: 0.7200 | F1-Macro: 0.6042 | Rec-C1: 0.4050 | F1-C1: 0.3901 | T_Train: 0.409s | T_Pred: 0.003s
+2026-11-19 20:26:35,858 [INFO] 
+--- Iniciando Algoritmo: RANDOM_FOREST na VARIACAO_B (5 Folds) ---
+2026-11-19 20:26:40,506 [INFO] [31/40] VARIACAO_B | RANDOM_FOREST | Fold 1 -> Acc: 0.8144 | F1-Macro: 0.6769 | Rec-C1: 0.3589 | F1-C1: 0.4662 | T_Train: 4.487s | T_Pred: 0.079s
+2026-11-19 20:26:45,098 [INFO] [32/40] VARIACAO_B | RANDOM_FOREST | Fold 2 -> Acc: 0.8158 | F1-Macro: 0.6777 | Rec-C1: 0.3669 | F1-C1: 0.4667 | T_Train: 4.436s | T_Pred: 0.072s
+2026-11-19 20:26:49,607 [INFO] [33/40] VARIACAO_B | RANDOM_FOREST | Fold 3 -> Acc: 0.8206 | F1-Macro: 0.6901 | Rec-C1: 0.3893 | F1-C1: 0.4891 | T_Train: 4.357s | T_Pred: 0.071s
+2026-11-19 20:26:54,169 [INFO] [34/40] VARIACAO_B | RANDOM_FOREST | Fold 4 -> Acc: 0.8100 | F1-Macro: 0.6664 | Rec-C1: 0.3516 | F1-C1: 0.4475 | T_Train: 4.406s | T_Pred: 0.072s
+2026-11-19 20:26:58,670 [INFO] [35/40] VARIACAO_B | RANDOM_FOREST | Fold 5 -> Acc: 0.8177 | F1-Macro: 0.6791 | Rec-C1: 0.3627 | F1-C1: 0.4681 | T_Train: 4.350s | T_Pred: 0.071s
+2026-11-19 20:26:59,058 [INFO] 
+--- Iniciando Algoritmo: KNN na VARIACAO_B (5 Folds) ---
+2026-11-19 20:26:59,305 [INFO] [36/40] VARIACAO_B | KNN | Fold 1 -> Acc: 0.7874 | F1-Macro: 0.6467 | Rec-C1: 0.3464 | F1-C1: 0.4239 | T_Train: 0.009s | T_Pred: 0.115s
+2026-11-19 20:26:59,552 [INFO] [37/40] VARIACAO_B | KNN | Fold 2 -> Acc: 0.7900 | F1-Macro: 0.6473 | Rec-C1: 0.3503 | F1-C1: 0.4229 | T_Train: 0.008s | T_Pred: 0.115s
+2026-11-19 20:26:59,799 [INFO] [38/40] VARIACAO_B | KNN | Fold 3 -> Acc: 0.7967 | F1-Macro: 0.6611 | Rec-C1: 0.3719 | F1-C1: 0.4467 | T_Train: 0.007s | T_Pred: 0.115s
+2026-11-19 20:27:00,052 [INFO] [39/40] VARIACAO_B | KNN | Fold 4 -> Acc: 0.7888 | F1-Macro: 0.6434 | Rec-C1: 0.3432 | F1-C1: 0.4157 | T_Train: 0.007s | T_Pred: 0.115s
+2026-11-19 20:27:00,299 [INFO] [40/40] VARIACAO_B | KNN | Fold 5 -> Acc: 0.7954 | F1-Macro: 0.6514 | Rec-C1: 0.3454 | F1-C1: 0.4274 | T_Train: 0.007s | T_Pred: 0.117s
+2026-11-19 20:27:00,699 [INFO] 
+Tabela detalhada das 40 rodadas salva em: ./results/metrics/metricas_por_fold.csv
+2026-11-19 20:27:01,251 [INFO] Predições out-of-fold consolidadas salvas em: ./results/metrics/predicoes_out_of_fold.csv (240,000 registros)
+2026-11-19 20:27:01,251 [INFO] 
+================================================================================
+2026-11-19 20:27:01,251 [INFO] TREINAMENTO E PERSISTÊNCIA DOS 8 MODELOS FINAIS COMPLETOS (30.000 REGISTROS)
+2026-11-19 20:27:01,251 [INFO] ================================================================================
+2026-11-19 20:27:01,253 [INFO] Treinando modelo final completo: DUMMY (variacao_a)...
+2026-11-19 20:27:01,255 [INFO]  - Salvo em ./models/dummy_variacao_a.joblib (0.00 MB, treino=0.00s)
+2026-11-19 20:27:01,255 [INFO] Treinando modelo final completo: DECISION_TREE (variacao_a)...
+2026-11-19 20:27:01,788 [INFO]  - Salvo em ./models/decision_tree_variacao_a.joblib (0.12 MB, treino=0.53s)
+2026-11-19 20:27:01,788 [INFO] Treinando modelo final completo: RANDOM_FOREST (variacao_a)...
+2026-11-19 20:27:07,748 [INFO]  - Salvo em ./models/random_forest_variacao_a.joblib (12.25 MB, treino=5.42s)
+2026-11-19 20:27:07,749 [INFO] Treinando modelo final completo: KNN (variacao_a)...
+2026-11-19 20:27:07,839 [INFO]  - Salvo em ./models/knn_variacao_a.joblib (2.56 MB, treino=0.02s)
+2026-11-19 20:27:07,840 [INFO] Treinando modelo final completo: DUMMY (variacao_b)...
+2026-11-19 20:27:07,842 [INFO]  - Salvo em ./models/dummy_variacao_b.joblib (0.00 MB, treino=0.00s)
+2026-11-19 20:27:07,842 [INFO] Treinando modelo final completo: DECISION_TREE (variacao_b)...
+2026-11-19 20:27:08,347 [INFO]  - Salvo em ./models/decision_tree_variacao_b.joblib (0.12 MB, treino=0.50s)
+2026-11-19 20:27:08,347 [INFO] Treinando modelo final completo: RANDOM_FOREST (variacao_b)...
+2026-11-19 20:27:14,544 [INFO]  - Salvo em ./models/random_forest_variacao_b.joblib (11.89 MB, treino=5.70s)
+2026-11-19 20:27:14,544 [INFO] Treinando modelo final completo: KNN (variacao_b)...
+2026-11-19 20:27:14,620 [INFO]  - Salvo em ./models/knn_variacao_b.joblib (2.51 MB, treino=0.01s)
+2026-11-19 20:27:14,622 [INFO] ================================================================================
+2026-11-19 20:27:14,622 [INFO] FASE 3 - EXECUÇÃO EXPERIMENTAL CONCLUÍDA COM SUCESSO EM 68.73 SEGUNDOS
+2026-11-19 20:27:14,622 [INFO] ================================================================================
+2026-11-19 20:35:33,041 [INFO] ========================================================
+2026-11-19 20:35:33,042 [INFO] INICIANDO SUÍTE DE VALIDAÇÕES AUTOMATIZADAS DA FASE 2
+2026-11-19 20:35:33,042 [INFO] ========================================================
+2026-11-19 20:35:33,042 [INFO] Teste 1: Verificando integridade SHA-256 dos arquivos brutos...
+2026-11-19 20:35:33,059 [INFO] -> Teste 1 APROVADO: Todos os arquivos brutos estão intactos.
+2026-11-19 20:35:33,059 [INFO] Teste 2: Verificando dimensões e integridade de classes nas variações A e B...
+2026-11-19 20:35:33,157 [INFO] -> Teste 2 APROVADO: 30.000 registros e distribuição 23.364/6.636 rigorosamente preservados.
+2026-11-19 20:35:33,157 [INFO] Teste 3: Verificando aplicação estrita das regras de categorias...
+2026-11-19 20:35:33,217 [INFO] -> Teste 3 APROVADO: Regras de consolidação e preservação executadas com precisão.
+2026-11-19 20:35:33,217 [INFO] Teste 4: Verificando isolamento de grupos e integridade dos 5 folds...
+2026-11-19 20:35:33,237 [INFO] -> Teste 4 APROVADO: 0 vazamento de perfis idênticos entre treino e validação em todos os 5 folds.
+2026-11-19 20:35:33,238 [INFO] Teste 5: Ensaio de viabilidade de execução dos algoritmos (dry-run no Fold 1)...
+2026-11-19 20:35:33,276 [INFO]  - Algoritmo 'dummy': execução técnica concluída com sucesso (acurácia teste fold 1: 0.7742)
+2026-11-19 20:35:33,716 [INFO]  - Algoritmo 'decision_tree': execução técnica concluída com sucesso (acurácia teste fold 1: 0.7297)
+2026-11-19 20:35:38,666 [INFO]  - Algoritmo 'random_forest': execução técnica concluída com sucesso (acurácia teste fold 1: 0.8144)
+2026-11-19 20:35:38,871 [INFO]  - Algoritmo 'knn': execução técnica concluída com sucesso (acurácia teste fold 1: 0.7874)
+2026-11-19 20:35:38,871 [INFO] -> Teste 5 APROVADO: Pipelines e algoritmos 100% compatíveis e prontos para a Fase 3.
+2026-11-19 20:35:38,871 [INFO] ========================================================
+2026-11-19 20:35:38,871 [INFO] TODAS AS VALIDAÇÕES FORAM APROVADAS COM SUCESSO EM 5.83s
+2026-11-19 20:35:38,871 [INFO] ========================================================

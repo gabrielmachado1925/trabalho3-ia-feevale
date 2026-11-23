@@ -1,0 +1,23 @@
+atributo,valor_encontrado,contagem,percentual,status_documentacao,impacto_interpretacao
+EDUCATION,0,14,0.0467,Não documentado na UCI (valores oficiais: 1 a 4),Representa códigos desconhecidos ou categorias adicionais de outros
+EDUCATION,5,280,0.9333,Não documentado na UCI (valores oficiais: 1 a 4),Representa códigos desconhecidos ou categorias adicionais de outros
+EDUCATION,6,51,0.17,Não documentado na UCI (valores oficiais: 1 a 4),Representa códigos desconhecidos ou categorias adicionais de outros
+MARRIAGE,0,54,0.18,"Não documentado na UCI (valores oficiais: 1, 2, 3)",Possível estado civil ausente/desconhecido
+PAY_0,-2,2759,9.1967,Não descrito na documentação da UCI (documentado apenas -1 e 1..9),Inatividade / Saldo zero / Sem consumo
+PAY_0,0,14737,49.1233,Não descrito na documentação da UCI (documentado apenas -1 e 1..9),Uso de crédito rotativo / Pagamento mínimo
+PAY_2,-2,3782,12.6067,Não descrito na documentação da UCI (documentado apenas -1 e 1..9),Inatividade / Saldo zero / Sem consumo
+PAY_2,0,15730,52.4333,Não descrito na documentação da UCI (documentado apenas -1 e 1..9),Uso de crédito rotativo / Pagamento mínimo
+PAY_3,-2,4085,13.6167,Não descrito na documentação da UCI (documentado apenas -1 e 1..9),Inatividade / Saldo zero / Sem consumo
+PAY_3,0,15764,52.5467,Não descrito na documentação da UCI (documentado apenas -1 e 1..9),Uso de crédito rotativo / Pagamento mínimo
+PAY_4,-2,4348,14.4933,Não descrito na documentação da UCI (documentado apenas -1 e 1..9),Inatividade / Saldo zero / Sem consumo
+PAY_4,0,16455,54.85,Não descrito na documentação da UCI (documentado apenas -1 e 1..9),Uso de crédito rotativo / Pagamento mínimo
+PAY_5,-2,4546,15.1533,Não descrito na documentação da UCI (documentado apenas -1 e 1..9),Inatividade / Saldo zero / Sem consumo
+PAY_5,0,16947,56.49,Não descrito na documentação da UCI (documentado apenas -1 e 1..9),Uso de crédito rotativo / Pagamento mínimo
+PAY_6,-2,4895,16.3167,Não descrito na documentação da UCI (documentado apenas -1 e 1..9),Inatividade / Saldo zero / Sem consumo
+PAY_6,0,16286,54.2867,Não descrito na documentação da UCI (documentado apenas -1 e 1..9),Uso de crédito rotativo / Pagamento mínimo
+BILL_AMT1,< 0 (saldo credor),590,1.9667,"Válido operacionalmente, não explicitado na documentação resumida",Pagamento antecipado ou crédito a favor do cliente gerando saldo negativo na fatura
+BILL_AMT2,< 0 (saldo credor),669,2.23,"Válido operacionalmente, não explicitado na documentação resumida",Pagamento antecipado ou crédito a favor do cliente gerando saldo negativo na fatura
+BILL_AMT3,< 0 (saldo credor),655,2.1833,"Válido operacionalmente, não explicitado na documentação resumida",Pagamento antecipado ou crédito a favor do cliente gerando saldo negativo na fatura
+BILL_AMT4,< 0 (saldo credor),675,2.25,"Válido operacionalmente, não explicitado na documentação resumida",Pagamento antecipado ou crédito a favor do cliente gerando saldo negativo na fatura
+BILL_AMT5,< 0 (saldo credor),655,2.1833,"Válido operacionalmente, não explicitado na documentação resumida",Pagamento antecipado ou crédito a favor do cliente gerando saldo negativo na fatura
+BILL_AMT6,< 0 (saldo credor),688,2.2933,"Válido operacionalmente, não explicitado na documentação resumida",Pagamento antecipado ou crédito a favor do cliente gerando saldo negativo na fatura
