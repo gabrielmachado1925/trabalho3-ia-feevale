@@ -52,6 +52,7 @@ docs/*.doc
 *_backup*.doc
 *backup*.doc
 Modelo-Relatorio.docx
+src/generate_docx_report.py
 
 # Documentação interna de desenvolvimento e planejamento (mantida localmente)
 docs/*.md

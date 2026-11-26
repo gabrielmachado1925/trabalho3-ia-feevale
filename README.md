@@ -109,8 +109,7 @@ O relatório completo da atividade, estruturado e diagramado em 19 páginas segu
     ├── train.py                     # Treinamento das 40 rodadas e persistência de modelos (Fase 3)
     ├── evaluate.py                  # Consolidação estatística e tabelas de métricas (Fase 3)
     ├── plot_results.py              # Geração dos gráficos comparativos a 300 DPI (Fase 3)
-    ├── validate_results.py          # Suíte de validação e testes dos modelos/métricas (Fase 3)
-    └── generate_docx_report.py      # Geração automatizada do relatório Word em OpenXML (Fase 4)
+    └── validate_results.py          # Suíte de validação e testes dos modelos/métricas (Fase 3)
 ```
 
 ---
@@ -179,9 +178,6 @@ Os experimentos envolveram **40 rodadas completas** (2 Variações $\times$ 4 Al
    python src/evaluate.py
    python src/plot_results.py
    python src/validate_results.py
-
-   # Fase 4: Geração do Relatório Acadêmico (Word DOCX)
-   python src/generate_docx_report.py
    ```
 
 Ao final da execução, todas as 19 tabelas CSV estarão em `results/metrics/`, todos os 23 gráficos em `results/charts/` e os 8 modelos persistidos em `models/`.
